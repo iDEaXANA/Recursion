@@ -5,7 +5,7 @@
 // The solution depends on solutions to smaller instances of the same problem.
 
 // Unofficial Definition of Recursion:
-// "Any situation where you do something, and depending on the results, you might do it again."
+// "Defining something in terms of itself."
 
 // Recursive functions have two parts:
 // 1) the recursive call to the function
@@ -85,12 +85,14 @@
 // }
 
 // console.log(fib(15))
+
 //////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//Tree Recursion- Worked Example:
 
-//Tree Recursion:
-
-var canvas = document.getElementById("canvas");
-var ctx = canvas.getContext('2d')
+const canvas = document.getElementById("canvas");
+const ctx = canvas.getContext('2d')
 
 function random(min,max){
     //Returns a random fractional number between min and max (inclusive), 
@@ -125,4 +127,66 @@ function drawTree(startX, startY, length, angle, branchWidth, hue, sat, light){
 
 }
 
-drawTree(500, 675, 120, 0, 45, 34, 244, 26);
+drawTree(500, 675, 120, 0, 35, 34, 244, 26);
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//Tree Recursion- My attempt:
+const canvas2 = document.getElementById("myCanvas");
+const myctx = canvas2.getContext('2d');
+const ang = Math.PI / 4;
+
+const sliderLength = document.getElementById("length");
+sliderLength.addEventListener("mouseup", slider);
+
+
+const sliderAng = document.getElementById("angle");
+sliderAng.addEventListener("mouseup", slider);
+
+
+const sliderWidth = document.getElementById("width");
+sliderWidth.addEventListener("mouseup", slider);
+
+
+function draw(startX, startY, length, ang, branchWidth) {
+    myctx.lineWidth = branchWidth; //Forgot this....
+
+    myctx.beginPath();
+
+    myctx.save();
+
+    myctx.strokeStyle = 0;
+    if (length < 20) {
+        myctx.strokeStyle = "#00ff00"
+    }
+    //ctx.fillStyle();
+
+    myctx.translate(startX, startY);
+    myctx.rotate(ang)
+    myctx.moveTo(0,0);
+    myctx.lineTo(0, -length);
+    myctx.stroke();
+    
+    if (length < 5){
+        myctx.restore();
+        return;
+    }
+
+    
+    draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8,);
+    draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8,);
+
+    myctx.restore();
+
+}
+
+function slider() {
+    myctx.clearRect(0, 0, canvas.width, canvas.height);
+    draw(500, 975, sliderLength.value, sliderAng.value, sliderWidth.value)
+}
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////
+
+
+

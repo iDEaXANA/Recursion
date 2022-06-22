@@ -1,0 +1,4 @@
+Final Project Notes:
+
+To add:
+3 Sliders, each affecting the length, angle and branch width.
