@@ -3,24 +3,83 @@
     padding: 0;
     box-sizing: border-box;
     max-width: 100%;
+    height: auto;
+}
+
+.container {
+    /* OPTION 1 */
+    /* display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1em;
+    align-items: center; */
+
+    display: flex; 
+    flex-wrap: wrap;
+    flex-direction: row;
+    text-align: center;
+    
+    /* OPTION 2 */
+    /* display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+    align-items: start; */
+}
+.container > * {
+    flex-grow: 1;
+    flex-basis: 33%;
+} 
+
+.myown__options::before {
+}
+
+/*
+MY ATTEMPT NO.1
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-width: 100%;
     align-items: center;
     text-align: center;
 }
 
 .container {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, minmax(100px, auto));
+    margin: auto;
   
-    
 }
 
 .tutorial {
+    display: grid;
+    grid-column: 1 / 10;
+    grid-row: 1 / 5;
+    justify-content: center;
  
 }
 .myown {
-    display: grid;
-    grid: 100% / 9fr 1fr;
-  
-     
+   display: grid;
+   grid-column: 1 / 10;
+   grid-row: 5 / 10;
+   grid-template-columns: subgrid;
+   grid-template-rows: subgrid;
+   
 }
-input output {
-    position: relative;
+.myown p {
+    grid-column: 3 / 7;
+    grid-row: 5 / 6;
+    justify-content: center;
 }
+.myCanvas {
+    grid-column: 1 / 7;
+    grid-row: 6 / 10;
+    justify-content: center;
+}
+
+.myown__content {
+    grid-column: 7 / 10;
+    grid-row: 6 / 10;
+    justify-content: center;
+}
+*/

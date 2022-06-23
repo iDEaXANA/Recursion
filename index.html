@@ -10,12 +10,13 @@
 <body class="container">
     <section class="tutorial">
         <p>Tutorial Recursion</p>
-        <canvas id="canvas" width="1000" height="700"></canvas>
+        <canvas id="canvas" width="1000" height="1300"></canvas>
     </section>
-    <p>Personalised Recursion</p>
-    <section class="myown">  
+    
+    <section class="myown__canvas">
+        <p>Personalised Recursion</p>
         <canvas id="myCanvas" width="1000" height="1300"></canvas>
-        <section class="myown__content">
+        <section class="myown__options">
             <p>Length of each branch:</p>
             <input type="range" id="length" name="length" min="80" max="150" step="1" oninput="this.nextElementSibling.value = this.value"> 
             <output></output>
@@ -27,5 +28,7 @@
             <output></output>
         </section>
     </section>
+    
+   
 </body>
 </html>
