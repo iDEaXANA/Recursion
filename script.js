@@ -149,6 +149,7 @@ sliderWidth.addEventListener("mouseup", slider);
 
 
 function draw(startX, startY, length, ang, branchWidth) {
+    
     myctx.lineWidth = branchWidth; //Forgot this....
 
     myctx.beginPath();
@@ -172,7 +173,6 @@ function draw(startX, startY, length, ang, branchWidth) {
         return;
     }
 
-    
     draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8,);
     draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8,);
 
@@ -182,7 +182,7 @@ function draw(startX, startY, length, ang, branchWidth) {
 
 function slider() {
     myctx.clearRect(0, 0, canvas.width, canvas.height);
-    draw(500, 975, sliderLength.value, sliderAng.value, sliderWidth.value)
+    draw(500, 650, sliderLength.value, sliderAng.value, sliderWidth.value)
 }
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////

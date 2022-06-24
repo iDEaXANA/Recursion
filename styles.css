@@ -6,30 +6,50 @@
     height: auto;
 }
 
+:root {
+    --bg-color: #101010;
+    --second-bg-color: #191919;
+}
+
 .container {
     /* OPTION 1 */
-    /* display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 1em;
-    align-items: center; */
-
-    display: flex; 
-    flex-wrap: wrap;
-    flex-direction: row;
-    text-align: center;
-    
+    grid:repeat(2, 1000px);
+   
     /* OPTION 2 */
     /* display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
     align-items: start; */
 }
-.container > * {
-    flex-grow: 1;
-    flex-basis: 33%;
-} 
 
-.myown__options::before {
+.tutorial {
+    /* background: var(--bg-color); */
+    grid-column: 1 / 1;
+    grid-row: 1 / 1;
 }
+
+.myown__options {
+ display:inline-block;
+ display:flex;
+ align-items: center;
+
+}
+
+.myown__canvas .myown__options {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*
 MY ATTEMPT NO.1

@@ -1,6 +1,10 @@
 Final Project Notes:
 
 To add:
-3 Sliders, each affecting the length, angle and branch width.
 
-https://www.youtube.com/watch?v=3elGSZSWTbM&list=WL&index=6&t=282s&ab_channel=KevinPowell
+Extension
+When they get smaller again, they turn into petals or flowers.
+Add a variable to track depth. add +1 to the recursive call to track how deep your depth is.
+Add how random it is. 
+EXTENSION EXTENSION:
+Instead of drawing line, draw an image
