@@ -33,6 +33,15 @@ body {
 
 Slider design:
 
+JS:
+
+const sliderDepth = document.getElementById("depth");
+sliderDepth.addEventListener("mouseup", slider);
+
+HTML: 
+<input type="range" id="depth" name="depth" min="1" max="20" step="1" oninput="this.nextElementSibling.value = this.value">
+<output></output>
+
 https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/
 
 Button design:
