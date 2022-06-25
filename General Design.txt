@@ -1,0 +1,49 @@
+CSS for other projects:
+IN ORDER:
+Fonts
+Layout
+Spice up boxes
+Slider design
+Button design.
+
+Fonts:
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+
+Layout: (API, Boxgen, Banking, Canvas, Final Project.)
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Source Code Pro', monospace;
+    font-size: xx-large;
+    list-style: none;
+    text-decoration: none; 
+}
+
+body {
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #e5e5e5;
+}
+
+Slider design:
+
+https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/
+
+Button design:
+
+
+API 
+Needs input fix!
+
+Boxgen: 
+Turn the number box into slider.
+Make boxes look nicer by using gradients (https://www.w3schools.com/css/css3_gradients.asp), setting 
+
+Other stuff to do: 
+Get banking app working.

@@ -5,7 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css" type="text/css">
-    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
 </head>
 <body class="container">
     <section class="tutorial">
@@ -28,7 +32,7 @@
         <p>Width of each branch:</p>
         <input type="range" id="width" name="width" min="3" max="20" step="0.5" oninput="this.nextElementSibling.value = this.value">
         <output></output>
-        <p>Iterations</p>
+        <p>Iterations:</p>
         <input type="range" id="depth" name="depth" min="1" max="20" step="1" oninput="this.nextElementSibling.value = this.value">
         <output></output>
     </section>

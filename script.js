@@ -163,7 +163,7 @@ function draw(startX, startY, length, ang, branchWidth, depth) {
     myctx.save();
 
     myctx.strokeStyle = "#725c42"
-    if (depth > sliderDepth.value / 2 ) {
+    if (depth > sliderDepth.value / 2 && depth > 5 ) {
         myctx.strokeStyle = "#00ff00"
         // if (Math.random() > 0.8) {
         //     myctx.strokeStyle = "#ff0000"
@@ -171,10 +171,11 @@ function draw(startX, startY, length, ang, branchWidth, depth) {
     }
     if (depth >= sliderDepth.value - 1) {
         myctx.strokeStyle = "#B632A0" 
-        branchWidth = branchWidth * 4
-        }   else if (Math.random() > 0.8 || depth >= sliderDepth.value - 1) {
+        branchWidth = branchWidth * 4;
+         if (Math.random() > 0.8) {      //HELP
             myctx.strokeStyle = "#FF033E"
             }
+        }
     
     //ctx.fillStyle();
 

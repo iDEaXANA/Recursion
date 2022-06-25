@@ -4,8 +4,7 @@ To add:
 Change input box to slider.
 
 Extension
-When they get smaller again, they turn into petals or flowers.
-Add how random it is. 
+When they get smaller again, they turn into petals or flowers. ASK FOR HELP.
 
 EXTENSION EXTENSION:
 Instead of drawing line, draw an image
