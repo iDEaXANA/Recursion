@@ -128,6 +128,7 @@ function drawTree(startX, startY, length, angle, branchWidth, hue, sat, light){
 }
 
 drawTree(500, 675, 120, 0, 35, 34, 244, 26);
+
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
@@ -147,46 +148,66 @@ sliderAng.addEventListener("mouseup", slider);
 const sliderWidth = document.getElementById("width");
 sliderWidth.addEventListener("mouseup", slider);
 
+const sliderDepth = document.getElementById("depth");
+sliderDepth.addEventListener("mouseup", slider);
 
-function draw(startX, startY, length, ang, branchWidth) {
-    
+
+let img = document.getElementById("leaf")
+let count = 0
+function draw(startX, startY, length, ang, branchWidth, depth) {
+    count ++
     myctx.lineWidth = branchWidth; //Forgot this....
 
     myctx.beginPath();
 
     myctx.save();
 
-    myctx.strokeStyle = 0;
-    if (length < 20) {
+    myctx.strokeStyle = "#725c42"
+    if (depth > sliderDepth.value / 2 ) {
         myctx.strokeStyle = "#00ff00"
+        // if (Math.random() > 0.8) {
+        //     myctx.strokeStyle = "#ff0000"
+        // }
     }
+    if (depth >= sliderDepth.value - 1) {
+        myctx.strokeStyle = "#B632A0" 
+        branchWidth = branchWidth * 4
+        }   else if (Math.random() > 0.8 || depth >= sliderDepth.value - 1) {
+            myctx.strokeStyle = "#FF033E"
+            }
+    
     //ctx.fillStyle();
 
     myctx.translate(startX, startY);
     myctx.rotate(ang)
-    myctx.moveTo(0,0);
+    myctx.moveTo(0,0);  
     myctx.lineTo(0, -length);
     myctx.stroke();
+    // myctx.scale(.8,.8) 
+    // myctx.drawImage(img,0,0)
     
-    if (length < 5){
+    
+    if (depth >= sliderDepth.value){
         myctx.restore();
         return;
     }
 
-    draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8,);
-    draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8,);
+    draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8, depth + 1);
+    draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8, depth + 1);
 
     myctx.restore();
-
+    console.log(depth + " " + count)
 }
 
 function slider() {
-    myctx.clearRect(0, 0, canvas.width, canvas.height);
-    draw(500, 650, sliderLength.value, sliderAng.value, sliderWidth.value)
+    myctx.clearRect(0, 0, canvas.width, canvas.height); //Resets canvas after you change an option
+    
+    if(sliderDepth.value < 20) {
+    draw(500, 650, sliderLength.value, sliderAng.value, sliderWidth.value, 1)
+    }else{
+        alert("I won't be able to handle that!")
+    }
 }
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////
-
-
-

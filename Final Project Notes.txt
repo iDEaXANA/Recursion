@@ -1,10 +1,11 @@
 Final Project Notes:
 
 To add:
+Change input box to slider.
 
 Extension
 When they get smaller again, they turn into petals or flowers.
-Add a variable to track depth. add +1 to the recursive call to track how deep your depth is.
 Add how random it is. 
+
 EXTENSION EXTENSION:
 Instead of drawing line, draw an image

@@ -17,7 +17,7 @@
         <p>Personalised Recursion</p>
         <canvas id="myCanvas" width="1000" height="700"></canvas>  
     </section>
-
+    <img src="/images/bark.png" id="leaf" style="display:none" >
     <section class="myown__options">
         <p>Length of each branch:</p>
         <input type="range" id="length" name="length" min="80" max="150" step="1" oninput="this.nextElementSibling.value = this.value"> 
@@ -27,6 +27,9 @@
         <output></output>
         <p>Width of each branch:</p>
         <input type="range" id="width" name="width" min="3" max="20" step="0.5" oninput="this.nextElementSibling.value = this.value">
+        <output></output>
+        <p>Iterations</p>
+        <input type="range" id="depth" name="depth" min="1" max="20" step="1" oninput="this.nextElementSibling.value = this.value">
         <output></output>
     </section>
     
