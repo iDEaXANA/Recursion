@@ -16,7 +16,7 @@
 .container {
     /* OPTION 1 */
     /* grid:repeat(2, 1000px); */
-    height: 100vh;
+    height: auto;
     display:grid;
     justify-content: center;
     align-items: flex-start;
@@ -55,7 +55,7 @@
     font-weight: bold;
 }
 
-@media (max-width: 990px){
+@media (max-width: 990px){ /* Need help! */
     .container>* {
         display:grid;
         transition: all .3s;
@@ -70,7 +70,62 @@
     }
 }
 
+/* Styling sliders */
 
+input[type="range"] {
+    -wekbit-appearance: none; /* Clears out default styles */
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 10rem;
+    margin-top: 5px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track { /* Chromium browsers */
+    background-image: linear-gradient(to right, #631C48, #9F265C, #CF2967, #F15B67, #FDB25F, #FED883);    /* Only 3 properties to design the track */
+    height: 0.35rem;
+    border-radius: 25px;
+}
+
+input[type="range"]::-moz-range-track {
+    background: #053a5f;
+    height: 0.35rem;
+    border-radius: 25px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 0.85rem;
+    width: .5rem;
+    margin-top: -7px; /* Track height/2 - thumb height/2 doesn't work lol*/ 
+    background-color: #7232f2 ;     /*#ec781f; #7232f2 */
+    border-radius: 24px;
+}
+
+input[type="range"]::-moz-range-thumb {
+    border: none;
+    border-radius: 0; /* default already has rounded border */
+    height: 1rem;
+    width: .5rem;
+    background-color: #7232f2;
+}
+
+input[type="range"]:focus { /* Adds accessibility by adding visual input when accessed. Will do more research */
+    outline: none;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+    border: 1px solid #20115b;
+    outline: 3px solid #20115b;
+    outline-offset: 0.08rem;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+    border: 1px solid #20115b;
+    outline:3px solid #20115b;
+    outline-offset: 0.125rem;
+}
 
 
 
