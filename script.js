@@ -154,9 +154,9 @@ sliderDepth.addEventListener("mouseup", slider);
 
 let img = document.getElementById("leaf")
 let count = 0
-function draw(startX, startY, length, ang, branchWidth, depth) {
+function draw(startX, startY, length, ang, branchWidth, depth, tipColour, tipColour2) {
     count ++
-    myctx.lineWidth = branchWidth; //Forgot this....
+    // myctx.lineWidth = branchWidth; //Forgot this....
 
     myctx.beginPath();
 
@@ -164,21 +164,21 @@ function draw(startX, startY, length, ang, branchWidth, depth) {
 
     myctx.strokeStyle = "#725c42"
     if (depth > sliderDepth.value / 2 && depth > 5 ) {
-        myctx.strokeStyle = "#00ff00"
-        // if (Math.random() > 0.8) {
-        //     myctx.strokeStyle = "#ff0000"
-        // }
+        myctx.strokeStyle = "#2D5A27"
+        
     }
-    if (depth >= sliderDepth.value - 1) {
-        myctx.strokeStyle = "#B632A0" 
-        branchWidth = branchWidth * 4;
-         if (Math.random() > 0.8) {      //HELP
-            myctx.strokeStyle = "#FF033E"
-            }
+    
+    if (depth > sliderDepth.value - 1 && depth > 6) {
+        branchWidth = branchWidth * 4
+        if (Math.random() > 0.5)
+        myctx.strokeStyle = tipColour
+        else {
+            myctx.strokeStyle = tipColour2
         }
+    }
     
     //ctx.fillStyle();
-
+    myctx.lineWidth = branchWidth;
     myctx.translate(startX, startY);
     myctx.rotate(ang)
     myctx.moveTo(0,0);  
@@ -193,8 +193,8 @@ function draw(startX, startY, length, ang, branchWidth, depth) {
         return;
     }
 
-    draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8, depth + 1);
-    draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8, depth + 1);
+    draw(0, -length, length * 0.8, ang -0.2, branchWidth * 0.8, depth + 1, tipColour, tipColour2);
+    draw(0, -length, length * 0.8, ang +0.2, branchWidth * 0.8, depth + 1, tipColour, tipColour2);
 
     myctx.restore();
     console.log(depth + " " + count)
@@ -204,7 +204,7 @@ function slider() {
     myctx.clearRect(0, 0, canvas.width, canvas.height); //Resets canvas after you change an option
     
     if(sliderDepth.value < 20) {
-    draw(500, 650, sliderLength.value, sliderAng.value, sliderWidth.value, 1)
+    draw(500, 650, sliderLength.value, sliderAng.value, sliderWidth.value, 1, "#E39329", "#C42615")
     }else{
         alert("I won't be able to handle that!")
     }
